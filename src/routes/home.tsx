@@ -1,11 +1,14 @@
 import { Form, type ActionFunctionArgs } from "react-router";
+import { useQuery } from "convex/react";
 
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+import { api } from "../../convex/_generated/api";
+
 /**
  * TODO:
- * deploy to Fly.io
+ * deploy to Fly.io ✅
  * add Convex
  * * save messages to Convex
  * render recently saved items in home below input
@@ -14,6 +17,10 @@ import { Button } from "@/components/ui/button";
  * */
 
 export default function Home() {
+  const tasks = useQuery(api.tasks.get);
+
+  console.log("tasks", tasks);
+
   return (
     <main className="container m-auto flex h-dvh items-center">
       <div className="w-full flex gap-4 flex-col">
