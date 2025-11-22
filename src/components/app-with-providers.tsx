@@ -3,7 +3,9 @@ import { RouterProvider } from "react-router";
 
 import { router } from "@/router";
 
-const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+export const convex = new ConvexReactClient(
+  import.meta.env.VITE_CONVEX_URL as string,
+);
 
 export function AppWithProviders() {
   return (
